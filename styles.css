@@ -2,17 +2,17 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --green: #16a34a;
-  --green-dark: #15803d;
-  --green-light: #bbf7d0;
-  --green-pale: #f0fdf4;
-  --navy: #0f172a;
+  --green: #2196f3;
+  --green-dark: #1565c0;
+  --green-light: #bbdefb;
+  --green-pale: #e3f2fd;
+  --navy: #0d2137;
   --slate: #475569;
-  --light: #f8fafc;
+  --light: #f0f7ff;
   --white: #ffffff;
-  --border: #e2e8f0;
-  --shadow: 0 4px 24px rgba(0,0,0,0.08);
-  --shadow-lg: 0 12px 40px rgba(0,0,0,0.12);
+  --border: #cce4fb;
+  --shadow: 0 4px 24px rgba(33,150,243,0.08);
+  --shadow-lg: 0 12px 40px rgba(33,150,243,0.14);
   --radius: 16px;
   --radius-sm: 8px;
 }
@@ -192,7 +192,7 @@ ul { list-style: none; }
 /* ---- HERO ---- */
 .hero {
   position: relative;
-  background: linear-gradient(135deg, #0f2a1a 0%, #16a34a 60%, #22c55e 100%);
+  background: linear-gradient(135deg, #0d2137 0%, #2196f3 60%, #64b5f6 100%);
   color: var(--white);
   padding: 120px 0 140px;
   overflow: hidden;
@@ -305,7 +305,7 @@ ul { list-style: none; }
 }
 .about-visual { position: relative; }
 .about-image-placeholder {
-  background: linear-gradient(135deg, var(--green-pale), var(--green-light));
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
   border-radius: var(--radius);
   height: 440px;
   display: flex;
@@ -468,7 +468,7 @@ ul { list-style: none; }
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--green), var(--green-dark));
+  background: linear-gradient(135deg, #2196f3, var(--green-dark));
   color: var(--white);
   font-size: 0.85rem;
   font-weight: 700;
@@ -482,7 +482,7 @@ ul { list-style: none; }
 
 /* ---- CTA BANNER ---- */
 .cta-banner {
-  background: linear-gradient(135deg, var(--green-dark), var(--green));
+  background: linear-gradient(135deg, var(--green-dark), #2196f3);
   color: var(--white);
   padding: 80px 0;
 }
