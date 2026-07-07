@@ -1,4 +1,5 @@
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
 // ---- Mobile menu ----
 const hamburger = document.querySelector('.hamburger');
@@ -26,20 +27,115 @@ if (hamburger && mobileMenu) {
   });
 }
 
-// ---- Scroll progress bar ----
+// ---- Split-headline rise-in (hero titles) ----
+if (!prefersReducedMotion) {
+  document.querySelectorAll('.hero h1, .page-hero h1').forEach((h1) => {
+    const nodes = Array.from(h1.childNodes);
+    h1.setAttribute('aria-label', h1.textContent.trim());
+    h1.textContent = '';
+    let charIndex = 0;
+
+    const buildWord = (word) => {
+      const w = document.createElement('span');
+      w.className = 'w';
+      for (const ch of word) {
+        const c = document.createElement('span');
+        c.className = 'c';
+        c.textContent = ch;
+        c.style.setProperty('--cd', `${0.05 + charIndex * 0.028}s`);
+        charIndex += 1;
+        w.appendChild(c);
+      }
+      return w;
+    };
+
+    const appendText = (text, target) => {
+      text.split(/(\s+)/).forEach((part) => {
+        if (!part) return;
+        if (/^\s+$/.test(part)) target.appendChild(document.createTextNode(' '));
+        else target.appendChild(buildWord(part));
+      });
+    };
+
+    nodes.forEach((node) => {
+      if (node.nodeType === Node.TEXT_NODE) {
+        appendText(node.textContent, h1);
+      } else if (node.nodeName === 'BR') {
+        h1.appendChild(document.createElement('br'));
+      } else if (node.nodeType === Node.ELEMENT_NODE) {
+        // Keep styled spans (e.g. gradient .text-flame) intact: rise as one word
+        const w = document.createElement('span');
+        w.className = 'w';
+        const clone = node.cloneNode(true);
+        clone.classList.add('c');
+        clone.style.setProperty('--cd', `${0.05 + charIndex * 0.028}s`);
+        charIndex += clone.textContent.length;
+        w.appendChild(clone);
+        h1.appendChild(w);
+      }
+    });
+
+    h1.setAttribute('aria-hidden', 'false');
+    h1.querySelectorAll('.w, .c').forEach((el) => el.setAttribute('aria-hidden', 'true'));
+    h1.classList.add('split-ready');
+  });
+}
+
+// ---- Magnetic pull on primary CTAs ----
+if (finePointer && !prefersReducedMotion) {
+  document.querySelectorAll('.hero-actions .btn-flame, .cta-actions .btn-flame').forEach((btn) => {
+    btn.classList.add('magnetic');
+    btn.addEventListener('mousemove', (e) => {
+      const r = btn.getBoundingClientRect();
+      const x = (e.clientX - r.left - r.width / 2) * 0.25;
+      const y = (e.clientY - r.top - r.height / 2) * 0.25;
+      btn.style.transform = `translate(${x}px, ${y}px)`;
+    });
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = '';
+    });
+  });
+}
+
+// ---- 3D tilt on cards ----
+if (finePointer && !prefersReducedMotion) {
+  document.querySelectorAll('.program-card, .story-card, .way-card').forEach((card) => {
+    card.addEventListener('mousemove', (e) => {
+      const r = card.getBoundingClientRect();
+      const rx = ((e.clientY - r.top) / r.height - 0.5) * -5;
+      const ry = ((e.clientX - r.left) / r.width - 0.5) * 5;
+      card.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-4px)`;
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+    });
+  });
+}
+
+// ---- Scroll effects: progress bar + parallax court lines ----
 const progressBar = document.querySelector('.scroll-progress');
-if (progressBar) {
-  let ticking = false;
-  const update = () => {
+const parallaxLayers = prefersReducedMotion ? [] : Array.from(document.querySelectorAll('.hero-court'));
+let ticking = false;
+
+const onScroll = () => {
+  if (progressBar) {
     const max = document.documentElement.scrollHeight - window.innerHeight;
     progressBar.style.width = max > 0 ? `${(window.scrollY / max) * 100}%` : '0%';
-    ticking = false;
-  };
-  window.addEventListener('scroll', () => {
-    if (!ticking) { requestAnimationFrame(update); ticking = true; }
-  }, { passive: true });
-  update();
-}
+  }
+  parallaxLayers.forEach((layer) => {
+    const section = layer.parentElement;
+    const rect = section.getBoundingClientRect();
+    if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+    const progress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+    layer.style.transform = `translate3d(0, ${(progress - 0.5) * rect.height * 0.16}px, 0)`;
+  });
+  ticking = false;
+};
+
+window.addEventListener('scroll', () => {
+  if (!ticking) { requestAnimationFrame(onScroll); ticking = true; }
+}, { passive: true });
+onScroll();
 
 // ---- Scroll reveals ----
 const revealEls = document.querySelectorAll('.reveal');
