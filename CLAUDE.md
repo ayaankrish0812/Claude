@@ -1,38 +1,62 @@
 # Sports Beyond Borders — Website
 
-Static nonprofit website built with plain HTML, CSS, and JavaScript. No frameworks, no build tools, no dependencies.
+Static nonprofit website built with plain HTML, CSS, and JavaScript. No frameworks, no build tools, no dependencies. Design direction: **Sport Editorial** — oversized condensed headlines, navy/blue brand palette with a warm orange action accent, marquee ticker, count-up stats, scroll reveals, inline SVG icons (no emojis).
 
 ## Preview
 python -m http.server 8000
 Then open http://localhost:8000
 
-## File Structure
-- `index.html` — entire page structure and content
-- `styles.css` — all styling and responsive layout
-- `script.js` — mobile menu toggle, contact form handler, scroll animations
+## File Structure (multi-page)
+- `index.html` — home: hero + ticker, stats, story, values, program teasers, pull quote, CTA
+- `programs.html` — Gear Drive, Community Courts (core), Athlete Pathways in detail
+- `impact.html` — count-up stats, testimonial story cards, timeline (2015–2026), pull quote
+- `donate.html` — ways to give (gear/volunteer/partner), accepted-gear lists, transparency bars
+- `contact.html` — contact details + form with success message
+- `styles.css` — full design system (tokens in `:root`) and responsive layout
+- `script.js` — mobile menu, scroll progress bar, reveal observer, count-up stats, transparency bars, form handler
 
-## Color Palette
-- Primary blue: #2196f3
-- Dark blue: #1565c0
-- Light blue tint: #bbdefb
-- Pale blue background: #e3f2fd
-- Dark navy: #0d2137
-- White: #ffffff
-- Body text / muted: #475569
+## Color Palette (CSS variables in :root)
+- Navy 900 (page dark): #071120
+- Navy 800: #0A1B2E
+- Brand blue: #1E88E5 (`--blue`)
+- Deep blue (buttons/links on light): #1257A8 (`--blue-deep`)
+- Sky: #7CC3FF
+- Ice background: #EAF3FC / paper: #F8FBFE
+- Flame accent (Donate/primary CTA): #F97316 (`--flame`)
+- Ink text: #0B1623 / muted: #46586C
 
-## Font
-Inter — loaded from Google Fonts in index.html
+## Fonts
+- Headings: Barlow Condensed (uppercase, 500–800)
+- Body: Barlow (400–700)
+- Loaded from Google Fonts in each page head
 
-## Sections (in order)
-1. Sticky nav bar — logo, links, hamburger menu for mobile
-2. Hero — gradient banner, headline, subtext, two CTA buttons
-3. Stats strip — 4 stats on navy background
-4. About — mission story, three core values
-5. Programs — 3 cards: Gear Drive, Community Courts (featured), Athlete Pathways
-6. Impact — 3 testimonial cards with author avatars
-7. CTA banner — blue gradient, two buttons
-8. Contact — info panel + form with success message
-9. Footer — brand blurb, 3 link columns, copyright
+## Shared Page Anatomy
+1. Skip link + scroll progress bar
+2. Sticky navy header — logo (SVG mark), nav links with orange underline on hover/current, flame "Get Involved" button, hamburger on mobile
+3. Page content (home has full hero + ticker; subpages use `.page-hero`)
+4. CTA banner (navy, court-line SVG background)
+5. Footer — giant outlined "Beyond Borders" wordmark, 4 columns, copyright
+
+## Signature Elements
+- Court-line SVG backgrounds (`.hero-court`) on dark sections
+- Marquee ticker (`.ticker`) — CSS animation, duplicated track, paused via reduced motion
+- Count-up stats: `.count` elements with `data-target`, animated by IntersectionObserver
+- Numbered program cards (01/02/03) with outlined numerals; cards invert to navy on hover
+- Transparency bars on donate page: `.bar-fill` with `data-width`
+- Reveal animation: `.reveal` + optional `--d` delay custom property
+
+## JavaScript Behavior (script.js)
+- Hamburger toggles `.open` on `#mobileMenu`, syncs `aria-expanded`, closes on outside click and Escape
+- Scroll progress bar width via rAF-throttled scroll listener
+- IntersectionObserver adds `.is-visible` to `.reveal` elements (one-shot)
+- Count-up animation (ease-out cubic, 1.4s, locale-formatted); jumps to final value when `prefers-reduced-motion`
+- Transparency bars animate to `data-width` when visible
+- Contact form (`#contactForm`) prevents default, validates, shows `#formSuccess`, resets after 6s
+
+## Accessibility & SEO
+- Skip links, `aria-current="page"` nav states, `aria-label`s, visible focus styles
+- `prefers-reduced-motion` disables ticker/reveals/count-up easing
+- Meta description, Open Graph tags, theme-color, inline SVG favicon on every page
 
 ## Organization Details
 - Name: Sports Beyond Borders
@@ -43,23 +67,17 @@ Inter — loaded from Google Fonts in index.html
 - Founded: 2015
 - Status: 501(c)(3) Nonprofit
 
-## JavaScript Behavior
-- Hamburger button toggles `.open` class on `#mobileMenu`
-- Clicking outside the mobile menu closes it
-- Contact form prevents default submit, shows `#formSuccess` div, resets after 6 seconds
-- IntersectionObserver animates `.program-card`, `.testimonial-card`, `.stat-item` on scroll
-
 ## Responsive Breakpoints
-- 1024px: about section goes single column, image placeholder hides
-- 768px: hamburger menu shows, programs/testimonials stack, contact goes single column
-- 480px: hero buttons stack vertically
+- 1024px: story goes single column; values stack; program details single column; 2-col grids
+- 768px: hamburger menu; stats 2-col; cards stack; contact single column
+- 480px: hero/CTA buttons stack; stats single column
 
 ## Design Rules
-- Card border-radius: 16px, small elements: 8px
-- Pill tags and buttons: border-radius 50px
-- Card hover: translateY(-4px) with box-shadow
-- Button hover: slight translateY(-1px) or color shift
-- Smooth scroll on html element
+- Border radius: 6px (`--radius`) — editorial, sharp
+- Buttons/headings: Barlow Condensed uppercase with letter-spacing
+- Card hover: translateY(-6px) + shadow; program cards invert to navy
+- Kicker labels: orange dash + uppercase condensed text
+- Micro-interactions: 250ms `cubic-bezier(0.22, 1, 0.36, 1)`
 
 ## Branch
-claude/nonprofit-website-IqJAz
+claude/sports-beyond-borders-redesign-f2wd31
