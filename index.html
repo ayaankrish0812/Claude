@@ -3,376 +3,359 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sports Beyond Borders</title>
+  <title>Sports Beyond Borders — Every Kid Deserves a Chance to Play</title>
+  <meta name="description" content="Sports Beyond Borders is a 501(c)(3) nonprofit putting sports equipment, courts, and coaching within reach of underprivileged communities. 12,000+ kids equipped across 8 countries." />
+  <meta property="og:title" content="Sports Beyond Borders" />
+  <meta property="og:description" content="Every kid deserves a chance to play. Donate gear, volunteer, or partner with us." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.sportsbeyondborders.com/" />
+  <meta name="theme-color" content="#E3F2FD" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%231E88E5'/%3E%3Cpath d='M4 50h92M50 4v92' stroke='white' stroke-width='6' fill='none'/%3E%3Ccircle cx='50' cy='50' r='20' fill='none' stroke='white' stroke-width='6'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
   <!-- NAV -->
-  <header class="nav-bar">
+  <header class="site-header">
     <div class="container nav-inner">
-      <a href="#" class="logo">
-        <span class="logo-icon">⚽</span>
-        Sports Beyond Borders
+      <a href="index.html" class="logo" aria-label="Sports Beyond Borders — Home">
+        <svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true">
+          <circle cx="50" cy="50" r="44" fill="none" stroke="currentColor" stroke-width="7"/>
+          <path d="M6 50h88M50 6v88" stroke="currentColor" stroke-width="7" fill="none"/>
+          <circle cx="50" cy="50" r="18" fill="none" stroke="currentColor" stroke-width="7"/>
+        </svg>
+        <span>Sports Beyond<br/><em>Borders</em></span>
       </a>
-      <nav>
+      <nav aria-label="Primary">
         <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#programs">Programs</a></li>
-          <li><a href="#impact">Impact</a></li>
-          <li><a href="#contact" class="btn btn-outline">Contact Us</a></li>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="impact.html">Impact</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="donate.html" class="btn btn-flame">Get Involved</a></li>
         </ul>
       </nav>
-      <button class="hamburger" aria-label="Toggle menu" onclick="toggleMenu()">
+      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
         <span></span><span></span><span></span>
       </button>
     </div>
-    <nav class="mobile-menu" id="mobileMenu">
-      <ul>
-        <li><a href="#about" onclick="toggleMenu()">About</a></li>
-        <li><a href="#programs" onclick="toggleMenu()">Programs</a></li>
-        <li><a href="#impact" onclick="toggleMenu()">Impact</a></li>
-        <li><a href="#contact" onclick="toggleMenu()">Contact Us</a></li>
-      </ul>
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="programs.html">Programs</a>
+      <a href="impact.html">Impact</a>
+      <a href="contact.html">Contact</a>
+      <a href="donate.html" class="btn btn-flame btn-full">Get Involved</a>
     </nav>
   </header>
 
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <div class="hero-bg"></div>
-    <div class="container hero-content">
-      <span class="hero-tag">Empowering Communities Through Sport</span>
-      <h1>Everyone Deserves<br />a Chance to <span class="highlight">Play</span></h1>
-      <p class="hero-sub">
-        Sports Beyond Borders provides underprivileged communities with the equipment,
-        resources, and opportunities they need to experience the joy and growth that sport brings.
-      </p>
-      <div class="hero-actions">
-        <a href="#programs" class="btn btn-primary">Our Programs</a>
-        <a href="#about" class="btn btn-ghost">Learn More</a>
-      </div>
-    </div>
-    <div class="hero-shapes">
-      <div class="shape shape-1"></div>
-      <div class="shape shape-2"></div>
-      <div class="shape shape-3"></div>
-    </div>
-  </section>
+  <main id="main">
 
-  <!-- STATS STRIP -->
-  <section class="stats-strip">
-    <div class="container stats-grid">
-      <div class="stat-item">
-        <span class="stat-number">12,000+</span>
-        <span class="stat-label">Kids Equipped</span>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="hero-court" aria-hidden="true">
+        <svg viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="1180" cy="400" r="260"/>
+          <circle cx="1180" cy="400" r="90"/>
+          <line x1="1180" y1="0" x2="1180" y2="800"/>
+          <path d="M1440 120 A 340 340 0 0 0 1100 120"/>
+          <path d="M1440 680 A 340 340 0 0 1 1100 680"/>
+          <circle cx="180" cy="720" r="180"/>
+        </svg>
       </div>
-      <div class="stat-item">
-        <span class="stat-number">47</span>
-        <span class="stat-label">Communities Served</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-number">18</span>
-        <span class="stat-label">Sports Supported</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-number">8</span>
-        <span class="stat-label">Countries Reached</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="about section" id="about">
-    <div class="container about-inner">
-      <div class="about-visual">
-        <div class="about-image-placeholder">
-          <div class="placeholder-icon">🏅</div>
-          <p>Sports Beyond Borders</p>
+      <div class="container hero-inner">
+        <span class="hero-badge reveal"><span class="dot"></span> 501(c)(3) Nonprofit · Est. 2015</span>
+        <h1 class="reveal" style="--d:.08s">Every kid<br/>deserves a<br/>chance to <span class="text-flame">play</span></h1>
+        <p class="hero-sub reveal" style="--d:.16s">
+          We put equipment, courts, and coaching within reach of underprivileged communities —
+          because the price of a pair of cleats should never bench a kid.
+        </p>
+        <div class="hero-actions reveal" style="--d:.24s">
+          <a href="donate.html" class="btn btn-flame">
+            Donate Gear
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="programs.html" class="btn btn-outline-light">Our Programs</a>
         </div>
-        <div class="about-badge">
-          <span class="badge-year">Est. 2015</span>
-          <span class="badge-text">Over a decade of impact</span>
+        <div class="hero-meta reveal" style="--d:.32s">
+          <div class="hero-meta-item"><strong>Chicago</strong><span>Headquarters</span></div>
+          <div class="hero-meta-item"><strong>2015</strong><span>Founded</span></div>
+          <div class="hero-meta-item"><strong>100%</strong><span>Gear Inspected</span></div>
         </div>
       </div>
-      <div class="about-text">
-        <span class="section-tag">Our Story</span>
-        <h2 class="section-title">Breaking Down Barriers,<br />One Game at a Time</h2>
-        <p>
-          Sports Beyond Borders was founded on a simple belief: the lack of equipment should
-          never be the reason a child misses out on sport. We collect, refurbish, and distribute
-          sporting gear to communities that need it most — because access to play is a right,
-          not a privilege.
-        </p>
-        <p>
-          Through our programs, we don't just hand over equipment. We partner with local coaches,
-          schools, and community centers to build lasting sports cultures that foster teamwork,
-          resilience, and belonging.
-        </p>
-        <div class="values-list">
-          <div class="value-item">
-            <span class="value-icon">🤝</span>
-            <div>
-              <strong>Community First</strong>
-              <p>We work alongside communities, not for them.</p>
-            </div>
+      <!-- TICKER -->
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker-track">
+          <span class="ticker-item">
+            12,000+ kids equipped
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            47 communities served
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            18 sports supported
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            8 countries reached
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            every kid deserves a game
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </span>
+          <span class="ticker-item">
+            12,000+ kids equipped
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            47 communities served
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            18 sports supported
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            8 countries reached
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            every kid deserves a game
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="section" aria-label="Our impact in numbers">
+      <div class="container">
+        <div class="section-header split">
+          <div>
+            <span class="kicker">The Scoreboard</span>
+            <h2 class="section-title">Numbers that<br/>actually <span class="text-outline">matter</span></h2>
           </div>
-          <div class="value-item">
-            <span class="value-icon">♻️</span>
-            <div>
-              <strong>Sustainable Impact</strong>
-              <p>Refurbished gear reduces waste and stretches every dollar.</p>
-            </div>
+          <p class="section-sub">Ten years of collecting, refurbishing, and delivering gear — tracked game by game.</p>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-item reveal">
+            <span class="stat-number"><span class="count" data-target="12000">0</span><span class="suffix">+</span></span>
+            <span class="stat-label">Kids Equipped</span>
           </div>
-          <div class="value-item">
-            <span class="value-icon">🌍</span>
-            <div>
-              <strong>Global Reach, Local Roots</strong>
-              <p>International scope, always shaped by local needs.</p>
-            </div>
+          <div class="stat-item reveal" style="--d:.08s">
+            <span class="stat-number"><span class="count" data-target="47">0</span></span>
+            <span class="stat-label">Communities Served</span>
+          </div>
+          <div class="stat-item reveal" style="--d:.16s">
+            <span class="stat-number"><span class="count" data-target="18">0</span></span>
+            <span class="stat-label">Sports Supported</span>
+          </div>
+          <div class="stat-item reveal" style="--d:.24s">
+            <span class="stat-number"><span class="count" data-target="8">0</span></span>
+            <span class="stat-label">Countries Reached</span>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- PROGRAMS -->
-  <section class="programs section" id="programs">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">What We Do</span>
-        <h2 class="section-title">Our Programs</h2>
-        <p class="section-sub">
-          Three pillars drive everything we do — collecting gear, building skills, and growing community.
-        </p>
-      </div>
-      <div class="programs-grid">
-        <div class="program-card">
-          <div class="program-icon">🎒</div>
-          <h3>Gear Drive</h3>
+    <!-- STORY / ABOUT -->
+    <section class="section section-ice" id="story">
+      <div class="container story-grid">
+        <div class="story-visual reveal">
+          <div class="story-panel" aria-hidden="true">
+            <svg viewBox="0 0 400 460" fill="none">
+              <rect width="400" height="460" fill="#E3F2FD"/>
+              <circle cx="200" cy="230" r="150" stroke="#2196F3" stroke-width="3"/>
+              <circle cx="200" cy="230" r="52" stroke="#2196F3" stroke-width="3"/>
+              <line x1="0" y1="230" x2="400" y2="230" stroke="#2196F3" stroke-width="3"/>
+              <path d="M0 40 A 190 190 0 0 1 190 -60" stroke="#90CAF9" stroke-width="2" opacity="0.5"/>
+              <path d="M400 420 A 190 190 0 0 1 210 520" stroke="#90CAF9" stroke-width="2" opacity="0.5"/>
+              <circle cx="315" cy="120" r="34" fill="#1565C0"/>
+              <path d="M281 120h68M315 86v68" stroke="#FFFFFF" stroke-width="4"/>
+              <circle cx="315" cy="120" r="13" fill="none" stroke="#FFFFFF" stroke-width="4"/>
+              <g fill="#2196F3" opacity="0.55">
+                <circle cx="52" cy="360" r="4"/><circle cx="76" cy="360" r="4"/><circle cx="100" cy="360" r="4"/>
+                <circle cx="52" cy="384" r="4"/><circle cx="76" cy="384" r="4"/><circle cx="100" cy="384" r="4"/>
+                <circle cx="52" cy="408" r="4"/><circle cx="76" cy="408" r="4"/><circle cx="100" cy="408" r="4"/>
+              </g>
+            </svg>
+          </div>
+          <div class="story-badge">
+            <strong>10 yrs</strong>
+            <span>of impact since 2015</span>
+          </div>
+        </div>
+        <div class="story-text">
+          <span class="kicker">Our Story</span>
+          <h2 class="section-title">Breaking down barriers, one game at a time</h2>
           <p>
-            We run year-round equipment drives, collecting gently used sporting goods from donors
-            across the country. Every item is inspected, cleaned, and matched to a community in need.
+            Sports Beyond Borders was founded on a simple belief: <strong>the lack of equipment should
+            never be the reason a child misses out on sport.</strong> We collect, refurbish, and distribute
+            sporting gear to communities that need it most — because access to play is a right, not a privilege.
           </p>
-          <ul class="program-list">
-            <li>Soccer balls, cleats &amp; jerseys</li>
-            <li>Basketball hoops &amp; shoes</li>
-            <li>Baseball gloves &amp; helmets</li>
-            <li>And 15 more sports</li>
-          </ul>
-        </div>
-        <div class="program-card featured">
-          <div class="featured-label">Core Program</div>
-          <div class="program-icon">🏟️</div>
-          <h3>Community Courts</h3>
           <p>
-            We partner with local organizations to establish dedicated play spaces in underserved
-            neighborhoods — from painted asphalt courts to full multi-sport fields.
+            We don't just hand over equipment. We partner with local coaches, schools, and community
+            centers to build lasting sports cultures that foster teamwork, resilience, and belonging.
           </p>
-          <ul class="program-list">
-            <li>Infrastructure support</li>
-            <li>Ongoing equipment supply</li>
-            <li>Certified coach placement</li>
-            <li>Youth league coordination</li>
-          </ul>
-        </div>
-        <div class="program-card">
-          <div class="program-icon">🎓</div>
-          <h3>Athlete Pathways</h3>
-          <p>
-            For young athletes showing exceptional potential, we provide mentorship, scholarship
-            support, and pathways to regional and national competitions.
-          </p>
-          <ul class="program-list">
-            <li>1-on-1 mentorship</li>
-            <li>Academic scholarships</li>
-            <li>Competition sponsorships</li>
-            <li>Alumni network access</li>
-          </ul>
+          <a href="impact.html" class="btn btn-blue" style="margin-top:12px">
+            See The Impact
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- IMPACT / TESTIMONIALS -->
-  <section class="impact section" id="impact">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Stories of Change</span>
-        <h2 class="section-title">Real Impact, Real People</h2>
-      </div>
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <p class="quote">
-            "Before Sports Beyond Borders came to our neighborhood, we played soccer with a
-            plastic bag stuffed with newspaper. Now we have real boots and a real pitch. It
-            changed everything."
-          </p>
-          <div class="testimonial-author">
-            <div class="author-avatar">MK</div>
-            <div>
-              <strong>Marcus K.</strong>
-              <span>Nairobi, Kenya — Age 16</span>
-            </div>
-          </div>
+    <!-- VALUES -->
+    <section class="section section-dark" aria-label="Our values">
+      <div class="container">
+        <div class="section-header">
+          <span class="kicker">How We Play</span>
+          <h2 class="section-title">Three rules we <span class="text-flame">never</span> break</h2>
         </div>
-        <div class="testimonial-card">
-          <p class="quote">
-            "As a coach in a low-income district, I saw kids drop out of sport simply because
-            they couldn't afford shoes. Sports Beyond Borders eliminated that barrier completely."
-          </p>
-          <div class="testimonial-author">
-            <div class="author-avatar">LC</div>
-            <div>
-              <strong>Coach Lisa C.</strong>
-              <span>Detroit, MI — Youth Basketball</span>
+        <div class="values-grid">
+          <div class="value-card reveal">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </div>
+            <h3>Community First</h3>
+            <p>We work alongside communities, not for them. Local coaches and organizers lead; we supply and support.</p>
           </div>
-        </div>
-        <div class="testimonial-card">
-          <p class="quote">
-            "My daughter received a full set of gymnastics equipment through their Gear Drive.
-            She just qualified for the state championships. We could never have afforded that
-            equipment on our own."
-          </p>
-          <div class="testimonial-author">
-            <div class="author-avatar">SR</div>
-            <div>
-              <strong>Sandra R.</strong>
-              <span>Parent — Houston, TX</span>
+          <div class="value-card reveal" style="--d:.1s">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v6h6"/><path d="M21 12A9 9 0 0 0 6 5.3L3 8"/><path d="M21 22v-6h-6"/><path d="M3 12a9 9 0 0 0 15 6.7l3-2.7"/></svg>
             </div>
+            <h3>Sustainable Impact</h3>
+            <p>Refurbished gear reduces waste and stretches every dollar. Nothing playable ever hits a landfill.</p>
+          </div>
+          <div class="value-card reveal" style="--d:.2s">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+            </div>
+            <h3>Global Reach, Local Roots</h3>
+            <p>International scope, always shaped by local needs. Eight countries, one playbook: listen first.</p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CTA BANNER -->
-  <section class="cta-banner">
-    <div class="container cta-inner">
-      <div class="cta-text">
-        <h2>Ready to Make a Difference?</h2>
-        <p>Donate equipment, volunteer your time, or spread the word. Every action counts.</p>
+    <!-- PROGRAMS TEASER -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header split">
+          <div>
+            <span class="kicker">What We Do</span>
+            <h2 class="section-title">Three programs,<br/>one goal</h2>
+          </div>
+          <a href="programs.html" class="btn btn-outline">
+            All Programs
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div class="programs-grid">
+          <a href="programs.html#gear-drive" class="program-card reveal">
+            <span class="program-num">01</span>
+            <h3>Gear Drive</h3>
+            <p>Year-round equipment drives across the country. Every item inspected, cleaned, and matched to a community in need.</p>
+            <span class="program-link">Explore
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </span>
+          </a>
+          <a href="programs.html#community-courts" class="program-card reveal" style="--d:.1s">
+            <span class="program-tag">Core Program</span>
+            <span class="program-num">02</span>
+            <h3>Community Courts</h3>
+            <p>Dedicated play spaces in underserved neighborhoods — from painted asphalt courts to full multi-sport fields.</p>
+            <span class="program-link">Explore
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </span>
+          </a>
+          <a href="programs.html#athlete-pathways" class="program-card reveal" style="--d:.2s">
+            <span class="program-num">03</span>
+            <h3>Athlete Pathways</h3>
+            <p>Mentorship, scholarships, and competition sponsorships for young athletes showing exceptional potential.</p>
+            <span class="program-link">Explore
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </span>
+          </a>
+        </div>
       </div>
-      <div class="cta-actions">
-        <a href="#contact" class="btn btn-white">Get Involved</a>
-        <a href="#contact" class="btn btn-outline-white">Donate Gear</a>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CONTACT -->
-  <section class="contact section" id="contact">
-    <div class="container contact-inner">
-      <div class="contact-info">
-        <span class="section-tag">Get In Touch</span>
-        <h2 class="section-title">Let's Play Together</h2>
-        <p>
-          Whether you want to donate equipment, partner with us, volunteer, or simply learn
-          more — we'd love to hear from you.
-        </p>
-        <div class="contact-details">
-          <div class="contact-detail-item">
-            <span class="detail-icon">📍</span>
-            <div>
-              <strong>Headquarters</strong>
-              <p>123 Champions Way, Chicago, IL 60601</p>
-            </div>
-          </div>
-          <div class="contact-detail-item">
-            <span class="detail-icon">✉️</span>
-            <div>
-              <strong>Email</strong>
-              <p>hello@sportsbeyondborders.org</p>
-            </div>
-          </div>
-          <div class="contact-detail-item">
-            <span class="detail-icon">📞</span>
-            <div>
-              <strong>Phone</strong>
-              <p>(312) 555-0198</p>
-            </div>
-          </div>
+    <!-- PULL QUOTE -->
+    <section class="section section-dark">
+      <div class="container pull-quote reveal">
+        <blockquote>
+          "Before they came, we played soccer with a plastic bag stuffed with newspaper.
+          Now we have real boots and a real pitch. <em>It changed everything.</em>"
+        </blockquote>
+        <cite>Marcus K. — Nairobi, Kenya · Age 16</cite>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-banner">
+      <div class="hero-court" aria-hidden="true">
+        <svg viewBox="0 0 1440 600" preserveAspectRatio="xMidYMid slice" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="200" cy="300" r="240"/>
+          <circle cx="200" cy="300" r="80"/>
+          <line x1="200" y1="0" x2="200" y2="600"/>
+          <circle cx="1300" cy="520" r="160"/>
+        </svg>
+      </div>
+      <div class="container cta-inner">
+        <h2 class="reveal">Your old gear is<br/>someone's <span class="text-flame">first game</span></h2>
+        <p class="reveal" style="--d:.1s">Donate equipment, volunteer your time, or spread the word. Every action counts.</p>
+        <div class="cta-actions reveal" style="--d:.2s">
+          <a href="donate.html" class="btn btn-flame">Donate Gear
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="contact.html" class="btn btn-outline-light">Talk To Us</a>
         </div>
       </div>
-      <form class="contact-form" onsubmit="handleSubmit(event)">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="firstName">First Name</label>
-            <input type="text" id="firstName" name="firstName" placeholder="Jane" required />
-          </div>
-          <div class="form-group">
-            <label for="lastName">Last Name</label>
-            <input type="text" id="lastName" name="lastName" placeholder="Smith" required />
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="email" placeholder="jane@example.com" required />
-        </div>
-        <div class="form-group">
-          <label for="reason">I want to...</label>
-          <select id="reason" name="reason">
-            <option value="">Select a reason</option>
-            <option value="donate-gear">Donate sports equipment</option>
-            <option value="volunteer">Volunteer</option>
-            <option value="partner">Partner with us</option>
-            <option value="learn">Learn more about programs</option>
-            <option value="other">Something else</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="4" placeholder="Tell us a bit about yourself or how you'd like to help..."></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary btn-full">Send Message</button>
-        <div class="form-success" id="formSuccess">
-          Thanks! We'll be in touch within 2 business days. 🎉
-        </div>
-      </form>
-    </div>
-  </section>
+    </section>
+
+  </main>
 
   <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <a href="#" class="logo">
-          <span class="logo-icon">⚽</span>
-          Sports Beyond Borders
-        </a>
-        <p>Breaking down barriers through the universal language of sport.</p>
-      </div>
-      <div class="footer-links">
+  <footer class="site-footer">
+    <div class="footer-word" aria-hidden="true">Beyond Borders</div>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" aria-label="Sports Beyond Borders — Home">
+            <svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true">
+              <circle cx="50" cy="50" r="44" fill="none" stroke="currentColor" stroke-width="7"/>
+              <path d="M6 50h88M50 6v88" stroke="currentColor" stroke-width="7" fill="none"/>
+              <circle cx="50" cy="50" r="18" fill="none" stroke="currentColor" stroke-width="7"/>
+            </svg>
+            <span>Sports Beyond<br/><em>Borders</em></span>
+          </a>
+          <p>Breaking down barriers through the universal language of sport.</p>
+        </div>
         <div class="footer-col">
-          <h4>Organization</h4>
+          <h4>Explore</h4>
           <ul>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#programs">Programs</a></li>
-            <li><a href="#impact">Impact</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="impact.html">Impact</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Get Involved</h4>
           <ul>
-            <li><a href="#contact">Donate Gear</a></li>
-            <li><a href="#contact">Volunteer</a></li>
-            <li><a href="#contact">Partner</a></li>
+            <li><a href="donate.html">Donate Gear</a></li>
+            <li><a href="donate.html#volunteer">Volunteer</a></li>
+            <li><a href="donate.html#partner">Partner</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Follow Us</h4>
+          <h4>Connect</h4>
           <ul>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">Twitter / X</a></li>
-            <li><a href="#">Facebook</a></li>
+            <li><a href="mailto:hello@sportsbeyondborders.org">hello@sportsbeyondborders.org</a></li>
+            <li><a href="tel:+13125550198">(312) 555-0198</a></li>
+            <li><a href="#" rel="noopener">Instagram</a></li>
+            <li><a href="#" rel="noopener">Twitter / X</a></li>
           </ul>
         </div>
       </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2025 Sports Beyond Borders. All rights reserved. | 501(c)(3) Nonprofit Organization</p>
+      <div class="footer-bottom">
+        <p>© 2026 Sports Beyond Borders. All rights reserved.</p>
+        <p>501(c)(3) Nonprofit · 123 Champions Way, Chicago, IL 60601</p>
+      </div>
     </div>
   </footer>
 
