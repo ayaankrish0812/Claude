@@ -1,3 +1,67 @@
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/Barlow-400.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/Barlow-500.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/Barlow-600.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/Barlow-700.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/BarlowCondensed-500.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/BarlowCondensed-600.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/BarlowCondensed-700.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(fonts/BarlowCondensed-800.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 /* ============================================================
    SPORTS BEYOND BORDERS — Sport Editorial, White & Baby Blue
    ============================================================ */
@@ -250,6 +314,30 @@ button { font-family: inherit; }
   color: var(--blue);
 }
 .logo span em { font-style: normal; color: var(--blue-deep); }
+.logo-img { width: auto; height: 54px; flex-shrink: 0; transition: transform var(--dur) var(--ease); }
+.logo:hover .logo-img { transform: rotate(-6deg) scale(1.06); }
+
+/* Big logo floating in the home hero */
+.hero-logo {
+  position: absolute;
+  right: clamp(20px, 4vw, 40px);
+  top: 50%;
+  transform: translateY(-54%);
+  width: clamp(300px, 34vw, 470px);
+  pointer-events: none;
+  z-index: 1;
+}
+.hero-logo img {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 26px 46px rgba(21, 101, 192, 0.22));
+  animation: logoFloat 7s ease-in-out infinite;
+}
+@keyframes logoFloat {
+  0%, 100% { transform: translateY(0) rotate(-1.5deg); }
+  50% { transform: translateY(-16px) rotate(1.5deg); }
+}
+@media (max-width: 1100px) { .hero-logo { display: none; } }
 
 .nav-links {
   display: flex;
@@ -1071,6 +1159,27 @@ button { font-family: inherit; }
   text-align: center;
 }
 .form-success.show { display: block; }
+.form-error {
+  display: none;
+  margin-top: 18px;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1.5px solid #E53935;
+  border-radius: var(--radius);
+  color: #8E1B17;
+  font-weight: 600;
+  text-align: center;
+}
+.form-error.show { display: block; }
+.form-error a { color: var(--blue-deep); text-decoration: underline; }
+.form-note {
+  margin-top: 14px;
+  font-size: 0.86rem;
+  color: rgba(255, 255, 255, 0.78);
+  text-align: center;
+}
+.hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.contact-form .btn[disabled] { opacity: 0.75; cursor: progress; transform: none; box-shadow: none; }
 
 /* ---- FOOTER ---- */
 .site-footer {
@@ -1138,6 +1247,7 @@ button { font-family: inherit; }
   .reveal { opacity: 1; transform: none; transition: none; }
   .bar-fill { transition: none; }
   .hero::before, .hero::after, .page-hero::before, .page-hero::after { animation: none; }
+  .hero-logo img { animation: none; }
   .split-ready .c { transform: none; animation: none; }
   *, *::before, *::after {
     animation-duration: 0.01ms !important;

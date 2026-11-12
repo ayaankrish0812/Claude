@@ -201,12 +201,57 @@ if (bars.length) {
 // ---- Contact form ----
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
+  const success = document.getElementById('formSuccess');
+  const failure = document.getElementById('formError');
+  const submitBtn = contactForm.querySelector('button[type="submit"]');
+  const btnLabel = submitBtn.querySelector('.btn-label');
+  const idleLabel = btnLabel.textContent;
+
+  // Returning from the no-JavaScript fallback (FormSubmit redirects back with ?sent=1)
+  if (new URLSearchParams(window.location.search).get('sent') === '1') {
+    success.classList.add('show');
+  }
+
+  contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     if (!contactForm.reportValidity()) return;
-    const success = document.getElementById('formSuccess');
-    success.classList.add('show');
-    contactForm.reset();
-    setTimeout(() => success.classList.remove('show'), 6000);
+
+    const data = new FormData(contactForm);
+    if (data.get('_honey')) return; // spam bots fill the hidden field
+
+    success.classList.remove('show');
+    failure.classList.remove('show');
+    submitBtn.disabled = true;
+    btnLabel.textContent = 'Sending…';
+
+    const reasonSelect = contactForm.querySelector('#reason');
+    const reasonText = reasonSelect.value ? reasonSelect.options[reasonSelect.selectedIndex].text : 'Not specified';
+    const name = `${data.get('firstName')} ${data.get('lastName')}`.trim();
+
+    try {
+      const response = await fetch(contactForm.dataset.endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          name,
+          email: data.get('email'),
+          reason: reasonText,
+          message: data.get('message') || '(no message)',
+          _subject: `Website message: ${reasonText} — ${name}`,
+          _template: 'table',
+          _captcha: 'false',
+        }),
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok || String(result.success) !== 'true') throw new Error('send failed');
+
+      contactForm.reset();
+      success.classList.add('show');
+    } catch (err) {
+      failure.classList.add('show');
+    } finally {
+      submitBtn.disabled = false;
+      btnLabel.textContent = idleLabel;
+    }
   });
 }
