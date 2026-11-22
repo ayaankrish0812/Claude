@@ -9,7 +9,7 @@ Then open http://localhost:8000
 ## File Structure (multi-page)
 - `index.html` — home: hero + ticker, stats, story (photo), values, program teasers, photo mosaic, belief statement, CTA
 - `programs.html` — how-it-fits strip, then Gear Drive (core, with cleats photo), Free Day Camps, Partnered Sports Refurbishing
-- `impact.html` — stats, Livermore giveback (photos), countries reached, timeline (April 2024 → now), belief statement. Community quotes are an HTML comment waiting for real quotes (Girls Soccer Worldwide + a Livermore mom)
+- `impact.html` — stats, Livermore giveback (photos), countries reached, two community quotes (Girls Soccer Worldwide; a gear-recipient mom — lightly polished from the supplied wording), dated timeline May 2024 → Nov 2026, belief statement
 - `donate.html` — ways to give (gear/volunteer/partner), accepted-gear lists, "where it goes" steps
 - `contact.html` — contact details + form with success message
 - `styles.css` — full design system (tokens in `:root`) and responsive layout
@@ -36,8 +36,8 @@ Then open http://localhost:8000
   - `logo-white.png` — white, for icons/dark sections
   - `favicon-32.png`, `apple-touch-icon.png`, `icon-192.png` — white logo on blue rounded square
 - `og-image.png` (1200x630) — social share card; re-render if the headline or logo changes
-- `images/photos/` — real photos as WebP in two widths each (srcset): `cleats` (40+ pairs, garage-door area cropped out), `livermore-a`, `livermore-b` (Livermore clothes giveback), `donation-pickup` (license plate blurred before publishing). Use the `<figure class="photo">` markup; `.mosaic` is the home gallery grid
-- Still need: Shoes for Senegal partnership photos and the "shoes being received" photo
+- `images/photos/` — real photos as WebP in two widths each (srcset): `cleats` (40+ pairs, garage-door area cropped out), `livermore-a`, `livermore-b` (Livermore clothes giveback), `donation-pickup` (license plate blurred before publishing), `donation-bags` (bags of cleats in a trunk). Use the `<figure class="photo">` markup; `.mosaic` is the home gallery grid
+- Still welcome: Shoes for Senegal partnership photos
 
 ## Contact Form & Email
 - `contact.html` form posts to FormSubmit (formsubmit.co) which emails sportsbeyondborders@gmail.com; JS uses the `/ajax/` endpoint in `data-endpoint`, the plain `action` is the no-JS fallback (redirects back with `?sent=1`)
@@ -91,7 +91,10 @@ Then open http://localhost:8000
 - Email: sportsbeyondborders@gmail.com
 - Phone: (925) 967-1721 (temporary)
 - NOT a verified 501(c)(3): never claim tax-exempt/501(c)(3) status
-- Programs: Gear Drive (core), Free Day Camps, Partnered Sports Refurbishing (partner: Shoes for Senegal)
+- Programs: Gear Drive (core, running: 3 drives so far); Free Day Camps = PLANNED (3–4 sports stations, 1 hour each, equipment + water + snacks provided, free); Partnered Sports Refurbishing = IN PLANNING since Nov 2026 (recycling tennis balls, rackets, other equipment into donation-ready gear). Partner: Shoes for Senegal (since June 2026). Never describe camps/refurbishing as already running
+- Timeline: May 2024 founded · Sept 2024 club at California High · Nov 2024 first drive · May 2025 first outreach (Paraguay) · July 2025 second drive · Dec 2025 third drive · March 2026 Livermore giveback · June 2026 Shoes for Senegal · Nov 2026 planning refurbishing
+- Founding month: user said April early on, then "May 2024 Founded" — prose says only "2024", timeline says May 2024; confirm which is right
+- Instagram: @sports.beyond.borders (no X/Twitter account)
 - Verified numbers only: $12K+ equipment donated; ~5 countries (named: Senegal, Paraguay, Nicaragua); 40+ pairs of cleats in the photo; founded 2024. Do not invent other stats, quotes, dates, or financials
 
 ## Responsive Breakpoints

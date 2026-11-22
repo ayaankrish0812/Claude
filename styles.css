@@ -1375,3 +1375,4 @@ button { font-family: inherit; }
 @media (prefers-reduced-motion: reduce) { .photo img { transition: none; } .photo:hover img { transform: none; } }
 .program-detail.photo-lead { grid-template-columns: 1.2fr 1fr; }
 @media (max-width: 1024px) { .program-detail.photo-lead { grid-template-columns: 1fr; } }
+.program-tag.soft, .core-tag.soft { background: var(--ice); color: var(--blue-deep); border: 1.5px solid var(--baby); }
