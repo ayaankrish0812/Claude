@@ -4,17 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact — Sports Beyond Borders</title>
-  <meta name="description" content="Donate equipment, volunteer, or partner with Sports Beyond Borders. Reach us in Chicago at hello@sportsbeyondborders.org — we reply within two business days." />
+  <meta name="description" content="Donate equipment, volunteer, or partner with Sports Beyond Borders. Reach us in Chicago at sportsbeyondborders@gmail.com — we reply within two business days." />
   <meta property="og:title" content="Contact — Sports Beyond Borders" />
   <meta property="og:description" content="Let's play together. We reply within two business days." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.sportsbeyondborders.com/contact.html" />
+  <meta property="og:url" content="https://sportsbeyondborders.org/contact.html" />
+  <link rel="canonical" href="https://sportsbeyondborders.org/contact.html" />
+  <meta property="og:site_name" content="Sports Beyond Borders" />
+  <meta property="og:image" content="https://sportsbeyondborders.org/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contact — Sports Beyond Borders" />
+  <meta name="twitter:description" content="Donate equipment, volunteer, or partner with Sports Beyond Borders. Reach us in Chicago at sportsbeyondborders@gmail.com — we reply within two business days." />
+  <meta name="twitter:image" content="https://sportsbeyondborders.org/og-image.png" />
   <meta name="theme-color" content="#E3F2FD" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%231E88E5'/%3E%3Cpath d='M4 50h92M50 4v92' stroke='white' stroke-width='6' fill='none'/%3E%3Ccircle cx='50' cy='50' r='20' fill='none' stroke='white' stroke-width='6'/%3E%3C/svg%3E" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+  <link rel="preload" href="fonts/BarlowCondensed-800.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="fonts/Barlow-400.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
@@ -25,11 +34,7 @@
   <header class="site-header">
     <div class="container nav-inner">
       <a href="index.html" class="logo" aria-label="Sports Beyond Borders — Home">
-        <svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true">
-          <circle cx="50" cy="50" r="44" fill="none" stroke="currentColor" stroke-width="7"/>
-          <path d="M6 50h88M50 6v88" stroke="currentColor" stroke-width="7" fill="none"/>
-          <circle cx="50" cy="50" r="18" fill="none" stroke="currentColor" stroke-width="7"/>
-        </svg>
+        <img class="logo-img" src="images/logo-brand-sm.png" alt="" width="61" height="54" />
         <span>Sports Beyond<br/><em>Borders</em></span>
       </a>
       <nav aria-label="Primary">
@@ -99,7 +104,7 @@
               </span>
               <div>
                 <strong>Email</strong>
-                <p><a href="mailto:hello@sportsbeyondborders.org">hello@sportsbeyondborders.org</a></p>
+                <p><a href="mailto:sportsbeyondborders@gmail.com">sportsbeyondborders@gmail.com</a></p>
               </div>
             </div>
             <div class="contact-detail-item">
@@ -114,7 +119,12 @@
           </div>
         </div>
 
-        <form class="contact-form" id="contactForm" novalidate>
+        <form class="contact-form" id="contactForm" action="https://formsubmit.co/sportsbeyondborders@gmail.com" method="POST" data-endpoint="https://formsubmit.co/ajax/sportsbeyondborders@gmail.com">
+          <input type="hidden" name="_subject" value="New message from the Sports Beyond Borders website" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_next" value="https://sportsbeyondborders.org/contact.html?sent=1" />
+          <input type="text" name="_honey" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
           <h2>Send a message</h2>
           <div class="form-row">
             <div class="form-group">
@@ -146,11 +156,15 @@
             <label for="message">Message</label>
             <textarea id="message" name="message" rows="4" placeholder="Tell us a bit about yourself or how you'd like to help..."></textarea>
           </div>
-          <button type="submit" class="btn btn-flame btn-full">Send Message
+          <button type="submit" class="btn btn-flame btn-full"><span class="btn-label">Send Message</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </button>
+          <p class="form-note">Your message goes straight to our team inbox. We only use your details to reply.</p>
           <div class="form-success" id="formSuccess" role="status" aria-live="polite">
-            Thanks! We'll be in touch within 2 business days.
+            Thanks! Your message is on its way — we'll be in touch within 2 business days.
+          </div>
+          <div class="form-error" id="formError" role="alert">
+            Sorry, that didn't send. Please email us directly at <a href="mailto:sportsbeyondborders@gmail.com">sportsbeyondborders@gmail.com</a>.
           </div>
         </form>
       </div>
@@ -165,11 +179,7 @@
       <div class="footer-inner">
         <div class="footer-brand">
           <a href="index.html" class="logo" aria-label="Sports Beyond Borders — Home">
-            <svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true">
-              <circle cx="50" cy="50" r="44" fill="none" stroke="currentColor" stroke-width="7"/>
-              <path d="M6 50h88M50 6v88" stroke="currentColor" stroke-width="7" fill="none"/>
-              <circle cx="50" cy="50" r="18" fill="none" stroke="currentColor" stroke-width="7"/>
-            </svg>
+            <img class="logo-img" src="images/logo-brand-sm.png" alt="" width="61" height="54" />
             <span>Sports Beyond<br/><em>Borders</em></span>
           </a>
           <p>Breaking down barriers through the universal language of sport.</p>
@@ -194,7 +204,7 @@
         <div class="footer-col">
           <h4>Connect</h4>
           <ul>
-            <li><a href="mailto:hello@sportsbeyondborders.org">hello@sportsbeyondborders.org</a></li>
+            <li><a href="mailto:sportsbeyondborders@gmail.com">sportsbeyondborders@gmail.com</a></li>
             <li><a href="tel:+13125550198">(312) 555-0198</a></li>
             <li><a href="#" rel="noopener">Instagram</a></li>
             <li><a href="#" rel="noopener">Twitter / X</a></li>
@@ -208,6 +218,6 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>

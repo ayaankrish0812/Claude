@@ -27,11 +27,32 @@ Then open http://localhost:8000
 ## Fonts
 - Headings: Barlow Condensed (uppercase, 500–800)
 - Body: Barlow (400–700)
-- Loaded from Google Fonts in each page head
+- Self-hosted: latin woff2 files in `fonts/`, `@font-face` rules at the top of `styles.css`; key weights preloaded in each page head (no Google Fonts requests)
+
+## Brand Assets (`images/`)
+- Logo is a basketball with orbit ring and sparkles; the supplied source was pale baby blue (#ADDFF0) on white, so transparent variants were extracted:
+  - `logo-brand.png` / `logo-brand-sm.png` — brand blue #1E88E5, for light backgrounds (header, footer, hero)
+  - `logo-light.png` — original pale blue, only readable on dark blue sections
+  - `logo-white.png` — white, for icons/dark sections
+  - `favicon-32.png`, `apple-touch-icon.png`, `icon-192.png` — white logo on blue rounded square
+- `og-image.png` (1200x630) — social share card; re-render if the headline or logo changes
+- Photos: drop real photos in `images/` and reference them from the pages (none yet; hero/story/program panels still use SVG art)
+
+## Contact Form & Email
+- `contact.html` form posts to FormSubmit (formsubmit.co) which emails sportsbeyondborders@gmail.com; JS uses the `/ajax/` endpoint in `data-endpoint`, the plain `action` is the no-JS fallback (redirects back with `?sent=1`)
+- First live submission triggers a one-time FormSubmit activation email to the Gmail inbox that must be clicked
+- Hidden `_honey` field is the spam honeypot; failure state shows a mailto fallback
+- Public contact email everywhere on the site: sportsbeyondborders@gmail.com
+
+## Production / Hosting
+- Repo root is deployable as-is to Hostinger `public_html` (also GitHub Pages)
+- `.htaccess` (HTTPS redirect, gzip, caching, security headers), `404.html`, `robots.txt`, `sitemap.xml`
+- Canonical/OG URLs and sitemap use https://sportsbeyondborders.org — change in all pages if the primary domain differs
+- `404.html` uses root-absolute paths (`/styles.css`); regenerate from `contact.html` if the header/footer change
 
 ## Shared Page Anatomy
 1. Skip link + scroll progress bar
-2. Sticky navy header — logo (SVG mark), nav links with orange underline on hover/current, flame "Get Involved" button, hamburger on mobile
+2. Sticky white header — logo image + wordmark, nav links with blue underline on hover/current, gradient "Get Involved" button, hamburger on mobile. Home hero also shows a large floating logo (`.hero-logo`, hidden under 1100px)
 3. Page content (home has full hero + ticker; subpages use `.page-hero`)
 4. CTA banner (navy, court-line SVG background)
 5. Footer — giant outlined "Beyond Borders" wordmark, 4 columns, copyright

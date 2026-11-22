@@ -8,13 +8,22 @@
   <meta property="og:title" content="Sports Beyond Borders" />
   <meta property="og:description" content="Every kid deserves a chance to play. Donate gear, volunteer, or partner with us." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.sportsbeyondborders.com/" />
+  <meta property="og:url" content="https://sportsbeyondborders.org/" />
+  <link rel="canonical" href="https://sportsbeyondborders.org/" />
+  <meta property="og:site_name" content="Sports Beyond Borders" />
+  <meta property="og:image" content="https://sportsbeyondborders.org/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sports Beyond Borders — Every Kid Deserves a Chance to Play" />
+  <meta name="twitter:description" content="Sports Beyond Borders is a 501(c)(3) nonprofit putting sports equipment, courts, and coaching within reach of underprivileged communities. 12,000+ kids equipped across 8 countries." />
+  <meta name="twitter:image" content="https://sportsbeyondborders.org/og-image.png" />
   <meta name="theme-color" content="#E3F2FD" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%231E88E5'/%3E%3Cpath d='M4 50h92M50 4v92' stroke='white' stroke-width='6' fill='none'/%3E%3Ccircle cx='50' cy='50' r='20' fill='none' stroke='white' stroke-width='6'/%3E%3C/svg%3E" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+  <link rel="preload" href="fonts/BarlowCondensed-800.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="fonts/Barlow-400.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
@@ -25,11 +34,7 @@
   <header class="site-header">
     <div class="container nav-inner">
       <a href="index.html" class="logo" aria-label="Sports Beyond Borders — Home">
-        <svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true">
-          <circle cx="50" cy="50" r="44" fill="none" stroke="currentColor" stroke-width="7"/>
-          <path d="M6 50h88M50 6v88" stroke="currentColor" stroke-width="7" fill="none"/>
-          <circle cx="50" cy="50" r="18" fill="none" stroke="currentColor" stroke-width="7"/>
-        </svg>
+        <img class="logo-img" src="images/logo-brand-sm.png" alt="" width="61" height="54" />
         <span>Sports Beyond<br/><em>Borders</em></span>
       </a>
       <nav aria-label="Primary">
@@ -70,6 +75,7 @@
         </svg>
       </div>
       <div class="container hero-inner">
+        <div class="hero-logo" aria-hidden="true"><img src="images/logo-brand.png" alt="" width="420" height="373" /></div>
         <span class="hero-badge reveal"><span class="dot"></span> 501(c)(3) Nonprofit · Est. 2015</span>
         <h1 class="reveal" style="--d:.08s">Every kid<br/>deserves a<br/>chance to <span class="text-flame">play</span></h1>
         <p class="hero-sub reveal" style="--d:.16s">
@@ -316,11 +322,7 @@
       <div class="footer-inner">
         <div class="footer-brand">
           <a href="index.html" class="logo" aria-label="Sports Beyond Borders — Home">
-            <svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true">
-              <circle cx="50" cy="50" r="44" fill="none" stroke="currentColor" stroke-width="7"/>
-              <path d="M6 50h88M50 6v88" stroke="currentColor" stroke-width="7" fill="none"/>
-              <circle cx="50" cy="50" r="18" fill="none" stroke="currentColor" stroke-width="7"/>
-            </svg>
+            <img class="logo-img" src="images/logo-brand-sm.png" alt="" width="61" height="54" />
             <span>Sports Beyond<br/><em>Borders</em></span>
           </a>
           <p>Breaking down barriers through the universal language of sport.</p>
@@ -345,7 +347,7 @@
         <div class="footer-col">
           <h4>Connect</h4>
           <ul>
-            <li><a href="mailto:hello@sportsbeyondborders.org">hello@sportsbeyondborders.org</a></li>
+            <li><a href="mailto:sportsbeyondborders@gmail.com">sportsbeyondborders@gmail.com</a></li>
             <li><a href="tel:+13125550198">(312) 555-0198</a></li>
             <li><a href="#" rel="noopener">Instagram</a></li>
             <li><a href="#" rel="noopener">Twitter / X</a></li>
@@ -359,6 +361,6 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
