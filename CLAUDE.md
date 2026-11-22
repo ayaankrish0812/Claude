@@ -93,7 +93,7 @@ Then open http://localhost:8000
 - NOT a verified 501(c)(3): never claim tax-exempt/501(c)(3) status
 - Programs: Gear Drive (core, running: 3 drives so far); Free Day Camps = PLANNED (3–4 sports stations, 1 hour each, equipment + water + snacks provided, free); Partnered Sports Refurbishing = IN PLANNING since Nov 2026 (recycling tennis balls, rackets, other equipment into donation-ready gear). Partner: Shoes for Senegal (since June 2026). Never describe camps/refurbishing as already running
 - Timeline: May 2024 founded · Sept 2024 club at California High · Nov 2024 first drive · May 2025 first outreach (Paraguay) · July 2025 second drive · Dec 2025 third drive · March 2026 Livermore giveback · June 2026 Shoes for Senegal · Nov 2026 planning refurbishing
-- Founding month: user said April early on, then "May 2024 Founded" — prose says only "2024", timeline says May 2024; confirm which is right
+- Founding month confirmed: May 2024. Quotes approved; mom is attributed as "Livermore Giveback mom"; school is California High School; "about 5 countries" confirmed
 - Instagram: @sports.beyond.borders (no X/Twitter account)
 - Verified numbers only: $12K+ equipment donated; ~5 countries (named: Senegal, Paraguay, Nicaragua); 40+ pairs of cleats in the photo; founded 2024. Do not invent other stats, quotes, dates, or financials
 
