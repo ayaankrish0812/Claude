@@ -40,10 +40,10 @@ Then open http://localhost:8000
 - Still welcome: Shoes for Senegal partnership photos
 
 ## Contact Form & Email
-- `contact.html` form posts to FormSubmit (formsubmit.co) which emails sportsbeyondborders@gmail.com; JS uses the `/ajax/` endpoint in `data-endpoint`, the plain `action` is the no-JS fallback (redirects back with `?sent=1`)
+- `contact.html` form posts to FormSubmit (formsubmit.co) which emails sportsbeyondbordersbayarea@gmail.com; JS uses the `/ajax/` endpoint in `data-endpoint`, the plain `action` is the no-JS fallback (redirects back with `?sent=1`)
 - First live submission triggers a one-time FormSubmit activation email to the Gmail inbox that must be clicked
 - Hidden `_honey` field is the spam honeypot; failure state shows a mailto fallback
-- Public contact email everywhere on the site: sportsbeyondborders@gmail.com
+- Public contact email everywhere on the site: sportsbeyondbordersbayarea@gmail.com
 
 ## Production / Hosting
 - Repo root is deployable as-is to Hostinger `public_html` (also GitHub Pages)
@@ -87,15 +87,15 @@ Then open http://localhost:8000
 ## Organization Details
 - Name: Sports Beyond Borders
 - Mission: Getting sports gear (cleats, shoes, apparel) to kids who can't afford it
-- Founded: April 2024 in San Ramon, California, by high schoolers with a sports background; no physical headquarters/street address
-- Email: sportsbeyondborders@gmail.com
+- Founded: May 2024 in San Ramon, California, by high schoolers with a sports background; no physical headquarters/street address
+- Email: sportsbeyondbordersbayarea@gmail.com
 - Phone: (925) 967-1721 (temporary)
 - NOT a verified 501(c)(3): never claim tax-exempt/501(c)(3) status
 - Programs: Gear Drive (core, running: 3 drives so far); Free Day Camps = PLANNED (3–4 sports stations, 1 hour each, equipment + water + snacks provided, free); Partnered Sports Refurbishing = IN PLANNING since Nov 2026 (recycling tennis balls, rackets, other equipment into donation-ready gear). Partner: Shoes for Senegal (since June 2026). Never describe camps/refurbishing as already running
 - Timeline: May 2024 founded · Sept 2024 club at California High · Nov 2024 first drive · May 2025 first outreach (Paraguay) · July 2025 second drive · Dec 2025 third drive · March 2026 Livermore giveback · June 2026 Shoes for Senegal · Nov 2026 planning refurbishing
 - Founding month confirmed: May 2024. Quotes approved; mom is attributed as "Livermore Giveback mom"; school is California High School; "about 5 countries" confirmed
 - Instagram: @sports.beyond.borders (no X/Twitter account)
-- Verified numbers only: $12K+ equipment donated; ~5 countries (named: Senegal, Paraguay, Nicaragua); 40+ pairs of cleats in the photo; founded 2024. Do not invent other stats, quotes, dates, or financials
+- Verified numbers only: $12K+ equipment donated; ~5 countries (named: USA, Senegal, Paraguay, Peru); 40+ pairs of cleats in the photo; founded 2024. Do not invent other stats, quotes, dates, or financials
 
 ## Responsive Breakpoints
 - 1024px: story goes single column; values stack; program details single column; 2-col grids
