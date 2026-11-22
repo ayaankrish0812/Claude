@@ -641,7 +641,7 @@ button { font-family: inherit; }
   border-radius: var(--radius);
   overflow: hidden;
   position: relative;
-  aspect-ratio: 4 / 4.6;
+  aspect-ratio: 3 / 4;
   box-shadow: var(--shadow-lg);
 }
 .story-panel svg { width: 100%; height: 100%; }
@@ -1307,7 +1307,7 @@ button { font-family: inherit; }
 .mosaic .m-tall { grid-row: 1 / span 2; }
 .mosaic .m-wide { grid-column: 2 / span 2; }
 
-.story-panel img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 32%; }
+.story-panel img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; }
 .pd-visual.photo-frame { aspect-ratio: auto; background: none; }
 .pd-visual.photo-frame img { width: 100%; height: auto; display: block; }
 
